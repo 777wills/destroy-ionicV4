@@ -1,0 +1,7 @@
+{
+  "name": "destroy",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
