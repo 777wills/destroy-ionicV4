@@ -1,4 +1,4 @@
-import { Component, OnDestroy } from '@angular/core';
+import { Component, OnDestroy, OnInit, OnChanges, DoCheck, AfterContentInit, AfterContentChecked, AfterViewInit, AfterViewChecked } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -6,7 +6,15 @@ import { Router } from '@angular/router';
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })
-export class HomePage implements OnDestroy {
+export class HomePage implements 
+OnInit,
+OnChanges,
+DoCheck,
+AfterContentInit,
+AfterContentChecked,
+AfterViewInit,
+AfterViewChecked,
+OnDestroy {
 
   constructor(private router: Router) {}
 
@@ -14,8 +22,36 @@ export class HomePage implements OnDestroy {
     this.router.navigate(['users'])
   }
 
+  ngOnInit() {
+    console.log('OnInit');
+  }
+
+  ngOnChanges() {
+    console.log('OnChanges');
+  }
+
+  ngDoCheck() {
+    console.log('DoCheck');
+  }
+
+  ngAfterContentInit() {
+    console.log('AfterContentInit');
+  }
+
+  ngAfterContentChecked() {
+    console.log('AfterContentChecked');
+  }
+
+  ngAfterViewInit() {
+    console.log('AfterViewInit');
+  }
+
+  ngAfterViewChecked() {
+    console.log('AfterViewChecked');
+  }
+
   ngOnDestroy() {
-    console.log('destroy');
+    console.log('destroyHome');
   }
 
 }
